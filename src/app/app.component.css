@@ -1,0 +1,31 @@
+.wrapper {
+  max-width: 480px;
+  margin: 4rem auto;
+  padding: 2rem;
+  font-family: system-ui, sans-serif;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.count {
+  font-size: 1.5rem;
+  font-weight: bold;
+  min-width: 2ch;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
