@@ -1,0 +1,21 @@
+/* :host — сам элемент <app-product-tile> на странице */
+:host {
+  display: block;
+  height: 100%;
+}
+.tile {
+  height: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+}
+.tile h3 {
+  margin: 0 0 8px;
+}
+.description {
+  color: #555;
+}
+.price {
+  font-weight: bold;
+}

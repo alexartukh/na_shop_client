@@ -1,0 +1,22 @@
+<h2>Каталог</h2>
+
+<!-- @if / @else — условия прямо в шаблоне -->
+@if (loading()) {
+  <p>Загрузка...</p>
+} @else if (error()) {
+  <p class="error">{{ error() }}</p>
+} @else {
+  <ul class="products">
+    <!-- @for — цикл. track указывает, по какому полю Angular отличает
+         элементы друг от друга (обычно по id) -->
+    @for (product of products(); track product.id) {
+      <li>
+        <!-- [product]="product" — передаём товар в дочерний компонент
+             (как props в React: <ProductTile product={product} />) -->
+        <app-product-tile [product]="product" />
+      </li>
+    } @empty {
+      <li>Товаров пока нет</li>
+    }
+  </ul>
+}
