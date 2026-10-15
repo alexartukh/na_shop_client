@@ -1,6 +1,7 @@
 import { Service, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 import { Product } from './product';
 
 // Сервис товаров. @Service() — новый декоратор Angular (вместо старого
@@ -14,7 +15,7 @@ export class Products {
   private readonly http = inject(HttpClient);
 
   // Адрес нашего Nest-сервера.
-  private readonly apiUrl = 'http://localhost:3000';
+  private readonly apiUrl = environment.apiUrl;
 
   // Возвращает Observable, а не Promise.
   // ВАЖНО: запрос уйдёт только тогда, когда кто-то вызовет .subscribe().

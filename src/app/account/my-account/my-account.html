@@ -1,0 +1,30 @@
+<h2>Мой аккаунт</h2>
+
+@if (loading()) {
+  <p>Загрузка...</p>
+} @else if (error()) {
+  <p class="error">{{ error() }}</p>
+} @else {
+  <!-- "as user" — сохраняем значение signal'а в локальную переменную шаблона -->
+  @if (user(); as user) {
+    <section class="card">
+      <p class="name">{{ user.first_name }} {{ user.last_name }}</p>
+      <p>{{ user.email }}</p>
+      <p class="role">Роль: {{ user.role }}</p>
+    </section>
+  }
+
+  <h3>Мои заказы</h3>
+  <ul class="orders">
+    @for (order of orders(); track order.id) {
+      <li>
+        <span>Заказ #{{ order.id }}</span>
+        <span class="amount">{{ order.amount }} €</span>
+      </li>
+    } @empty {
+      <li>Заказов пока нет</li>
+    }
+  </ul>
+}
+
+<button type="button" (click)="auth.logout()">Выйти</button>

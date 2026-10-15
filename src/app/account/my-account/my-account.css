@@ -1,0 +1,38 @@
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  max-width: 400px;
+}
+.card p {
+  margin: 4px 0;
+}
+.name {
+  font-weight: bold;
+  font-size: 18px;
+}
+.role {
+  color: #555;
+}
+.orders {
+  list-style: none;
+  padding: 0;
+  max-width: 400px;
+}
+.orders li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+.amount {
+  font-weight: bold;
+}
+.error {
+  color: #c00;
+}
+button {
+  margin-top: 16px;
+  padding: 8px 16px;
+  cursor: pointer;
+}

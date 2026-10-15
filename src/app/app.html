@@ -1,5 +1,14 @@
 <header class="header">
-  <h1>{{ title() }}</h1>
+  <!-- routerLink — переход между страницами без перезагрузки -->
+  <h1><a routerLink="/">{{ title() }}</a></h1>
+  <nav>
+    <a routerLink="/category/main">Каталог</a>
+    @if (auth.isLoggedIn()) {
+      <a routerLink="/my-account">Мой аккаунт</a>
+    } @else {
+      <a routerLink="/login">Войти</a>
+    }
+  </nav>
 </header>
 
 <main class="main">
