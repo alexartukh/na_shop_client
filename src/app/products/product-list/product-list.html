@@ -13,7 +13,9 @@
       <li>
         <!-- [product]="product" — передаём товар в дочерний компонент
              (как props в React: <ProductTile product={product} />) -->
-        <app-product-tile [product]="product" />
+        <a [routerLink]="['/products', product.id]">
+          <app-product-tile [product]="product" />
+        </a>
       </li>
     } @empty {
       <li>Товаров пока нет</li>

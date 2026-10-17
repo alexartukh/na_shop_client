@@ -1,4 +1,5 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { Products } from '../products';
 import { Product } from '../product';
 import { ProductTile } from '../product-tile/product-tile';
@@ -6,7 +7,7 @@ import { ProductTile } from '../product-tile/product-tile';
 @Component({
   selector: 'app-product-list',
   // Компоненты, которые используются в шаблоне, нужно перечислить здесь
-  imports: [ProductTile],
+  imports: [ProductTile, RouterLink],
   templateUrl: './product-list.html',
   styleUrl: './product-list.css',
 })

@@ -1,0 +1,18 @@
+.add-to-cart {
+  display: flex;
+  gap: 8px;
+}
+input {
+  width: 80px;
+  padding: 8px;
+}
+button {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+.error {
+  color: #c00;
+}
+.ok {
+  color: #080;
+}

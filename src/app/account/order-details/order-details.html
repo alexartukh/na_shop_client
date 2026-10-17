@@ -1,0 +1,22 @@
+<a routerLink="/my-account">← Назад к аккаунту</a>
+
+@if (loading()) {
+  <p>Загрузка...</p>
+} @else if (error()) {
+  <p class="error">{{ error() }}</p>
+} @else if (order(); as order) {
+  <h2>Заказ #{{ order.id }}</h2>
+
+  <ul class="items">
+    @for (item of items(); track item.id) {
+      <li>
+        <span>{{ item.product.name }} × {{ item.quantity }}</span>
+        <span>{{ item.product.price }} €</span>
+      </li>
+    } @empty {
+      <li>В заказе нет товаров</li>
+    }
+  </ul>
+
+  <p class="total">Итого: {{ order.amount }} €</p>
+}

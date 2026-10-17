@@ -18,8 +18,10 @@
   <ul class="orders">
     @for (order of orders(); track order.id) {
       <li>
-        <span>Заказ #{{ order.id }}</span>
-        <span class="amount">{{ order.amount }} €</span>
+        <a [routerLink]="['/my-account/orders', order.id]">
+          <span>Заказ #{{ order.id }}</span>
+          <span class="amount">{{ order.amount }} €</span>
+        </a>
       </li>
     } @empty {
       <li>Заказов пока нет</li>

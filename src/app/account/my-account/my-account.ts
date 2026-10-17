@@ -1,4 +1,5 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { forkJoin } from 'rxjs';
 import { Account } from '../account';
 import { Auth } from '../../auth/auth';
@@ -7,6 +8,7 @@ import { Order } from '../order';
 
 @Component({
   selector: 'app-my-account',
+  imports: [RouterLink],
   templateUrl: './my-account.html',
   styleUrl: './my-account.css',
 })

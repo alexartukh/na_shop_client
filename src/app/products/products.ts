@@ -22,4 +22,8 @@ export class Products {
   getAll(): Observable<Product[]> {
     return this.http.get<Product[]>(`${this.apiUrl}/products`);
   }
+
+  getOne(id: number | string): Observable<Product> {
+    return this.http.get<Product>(`${this.apiUrl}/products/${id}`);
+  }
 }

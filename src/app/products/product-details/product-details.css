@@ -1,0 +1,29 @@
+/* Две колонки одинаковой ширины: слева картинка, справа текст */
+.details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 16px;
+}
+.image {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eee;
+  border-radius: 8px;
+  color: #999;
+}
+.info h2 {
+  margin-top: 0;
+}
+.description {
+  color: #555;
+}
+.price {
+  font-weight: bold;
+  font-size: 20px;
+}
+.error {
+  color: #c00;
+}
