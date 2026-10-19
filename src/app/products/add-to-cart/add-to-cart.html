@@ -7,7 +7,7 @@
     [value]="quantity()"
     (input)="onInput($any($event.target).value)"
   />
-  <button type="button" [disabled]="!valid()" (click)="add()">Добавить</button>
+  <button type="button" class="green" [disabled]="!valid()" (click)="add()">Добавить</button>
 </div>
 
 @if (!valid()) {

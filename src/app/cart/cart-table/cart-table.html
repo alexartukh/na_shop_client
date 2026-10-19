@@ -1,0 +1,30 @@
+<table class="items">
+  <thead>
+    <tr>
+      <th>Товар</th>
+      <th>Цена</th>
+      <th>Кол-во</th>
+      <th>Сумма</th>
+      @if (editable()) {
+        <th></th>
+      }
+    </tr>
+  </thead>
+  <tbody>
+    @for (item of cart.items(); track item.productId) {
+      <tr>
+        <td><a [routerLink]="['/products', item.productId]">{{ item.name }}</a></td>
+        <td>{{ item.price }} €</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ itemSum(item).toFixed(2) }} €</td>
+        @if (editable()) {
+          <td>
+            <button type="button" (click)="cart.remove(item.productId)">Удалить</button>
+          </td>
+        }
+      </tr>
+    }
+  </tbody>
+</table>
+
+<p class="total">Итого: {{ cart.total().toFixed(2) }} €</p>

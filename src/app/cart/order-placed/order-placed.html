@@ -1,0 +1,9 @@
+<h2>Спасибо за заказ!</h2>
+
+<p>Ваш заказ #{{ id() }} размещён.</p>
+
+<p>
+  <a [routerLink]="['/my-account/orders', id()]">Посмотреть заказ</a>
+  ·
+  <a routerLink="/category/main">Вернуться в каталог</a>
+</p>

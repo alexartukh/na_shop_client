@@ -3,6 +3,8 @@
   <h1><a routerLink="/">{{ title() }}</a></h1>
   <nav>
     <a routerLink="/category/main">Каталог</a>
+    <!-- Ссылка на корзину видна всегда, независимо от входа -->
+    <a routerLink="/cart">Корзина ({{ cart.count() }})</a>
     @if (auth.isLoggedIn()) {
       <a routerLink="/my-account">Мой аккаунт</a>
     } @else {

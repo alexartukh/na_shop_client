@@ -1,0 +1,24 @@
+.actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+button,
+.button {
+  padding: 8px 16px;
+  cursor: pointer;
+  border: 1px solid #888;
+  border-radius: 4px;
+  background: #f0f0f0;
+  color: inherit;
+  text-decoration: none;
+  font: inherit;
+}
+.green {
+  border-color: #1e7e34;
+  background: #28a745;
+  color: #fff;
+}
+.green:hover {
+  background: #218838;
+}

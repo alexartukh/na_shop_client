@@ -1,4 +1,4 @@
-import { Service, signal } from '@angular/core';
+import { computed, Service, signal } from '@angular/core';
 import { Product } from '../products/product';
 import { CartItem } from './cart-item';
 
@@ -12,6 +12,24 @@ export class Cart {
 
   // Наружу отдаём только для чтения — менять можно лишь через методы ниже.
   readonly items = this._items.asReadonly();
+
+  // Общее количество штук всех товаров — для счётчика в шапке.
+  readonly count = computed(() => {
+    let count = 0;
+    for (const item of this._items()) {
+      count = count + item.quantity;
+    }
+    return count;
+  });
+
+  // Общая сумма корзины. price хранится строкой, поэтому переводим в число.
+  readonly total = computed(() => {
+    let total = 0;
+    for (const item of this._items()) {
+      total = total + Number(item.price) * item.quantity;
+    }
+    return total;
+  });
 
   // Добавить товар. Если он уже в корзине — увеличиваем количество.
   add(product: Product, quantity: number): void {

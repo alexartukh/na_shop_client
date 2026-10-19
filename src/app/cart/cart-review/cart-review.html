@@ -1,0 +1,22 @@
+<h2>Проверка заказа</h2>
+
+@if (cart.items().length === 0) {
+  <p>Корзина пуста. <a routerLink="/category/main">Перейти в каталог</a></p>
+} @else {
+  <app-cart-table [editable]="false" />
+
+  <p class="warning">
+    Проверьте состав заказа. После размещения изменить его будет нельзя.
+  </p>
+
+  @if (error()) {
+    <p class="error">{{ error() }}</p>
+  }
+
+  <div class="actions">
+    <a routerLink="/cart">Вернуться в корзину</a>
+    @if (auth.isLoggedIn()) {
+      <button type="button" class="green" [disabled]="placing()" (click)="placeOrder()">Разместить заказ</button>
+    }
+  </div>
+}

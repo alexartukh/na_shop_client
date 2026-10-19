@@ -1,0 +1,22 @@
+.items {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 700px;
+}
+.items th,
+.items td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+.items a {
+  color: inherit;
+}
+.total {
+  font-weight: bold;
+  font-size: 18px;
+}
+button {
+  padding: 8px 16px;
+  cursor: pointer;
+}

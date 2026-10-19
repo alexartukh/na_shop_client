@@ -1,0 +1,15 @@
+<h2>Корзина</h2>
+
+@if (cart.items().length === 0) {
+  <p>Корзина пуста. <a routerLink="/category/main">Перейти в каталог</a></p>
+} @else {
+  <app-cart-table [editable]="true" />
+
+  <div class="actions">
+    <button type="button" (click)="cart.clear()">Очистить корзину</button>
+    <!-- Оформить заказ может только вошедший пользователь -->
+    @if (auth.isLoggedIn()) {
+      <a class="button green" routerLink="/cart/review">Проверить заказ перед размещением</a>
+    }
+  </div>
+}
